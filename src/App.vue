@@ -1,13 +1,11 @@
 <template>
   <v-app>
     <v-app-bar
-      app 
+      app
       color="primary"
       dark
     >
-    
-      
-      <v-app-bar-nav-icon @click="drawer= !drawer"/>
+    <v-app-bar-nav-icon @click="drawer= !drawer"/>
       <site-title></site-title>
       <v-spacer/>
       <v-btn to="/about">
@@ -16,7 +14,7 @@
       <v-btn icon to="/">
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
-      
+
     </v-app-bar>
     <v-navigation-drawer app v-model="drawer">
      <v-list-item>
@@ -35,27 +33,24 @@
     <v-content>
         <router-view/>
     </v-content>
-    
-    <v-footer app color="primary" dark absolute>
-      <v-spacer></v-spacer>
-      <div>&copy; {{ new Date().getFullYear() }}</div>
-    </v-footer>
+    <site-footer></site-footer>
+
   </v-app>
 </template>
 
 <script>
 
 import SiteTitle from '@/views/site/title'
+import SiteFooter from '@/views/site/footer'
 export default {
-  components:{SiteTitle},
+  components: { SiteTitle, SiteFooter },
   name: 'App',
 
-  data() {
-    return{
-      drawer : false
+  data () {
+    return {
+      drawer: false
     }
   }
 
-  
 }
 </script>
