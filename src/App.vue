@@ -8,7 +8,7 @@
     
       
       <v-app-bar-nav-icon @click="drawer= !drawer"/>
-      <v-toolbar-title>초원세탁소</v-toolbar-title>
+      <site-title></site-title>
       <v-spacer/>
       <v-btn to="/about">
         <v-icon>mdi-magnify</v-icon>
@@ -45,8 +45,9 @@
 
 <script>
 
-
+import SiteTitle from '@/views/site/title'
 export default {
+  components:{SiteTitle},
   name: 'App',
 
   data() {
